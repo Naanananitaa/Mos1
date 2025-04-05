@@ -1,0 +1,24 @@
+{
+  "name": "mos1",
+  "version": "1.0.0",
+  "description": "\"Una plataforma web interactiva diseñada para mejorar las habilidades lectoescritoras de estudiantes de licenciatura en psicología, utilizando teorías de Claudio Carpio y Robes y López. Incluye contenido teórico, ejercicios interactivos, evaluaciones y retroalimentación personalizada.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme"
+}
