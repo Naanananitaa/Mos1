@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Naanananitaa/Mos1/issues"
   },
-  "homepage": "https://github.com/Naanananitaa/Mos1#readme"
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react-router-dom": "^7.5.0"
+  }
 }
