@@ -4,7 +4,7 @@
   "description": "\"Una plataforma web interactiva diseñada para mejorar las habilidades lectoescritoras de estudiantes de licenciatura en psicología, utilizando teorías de Claudio Carpio y Robes y López. Incluye contenido teórico, ejercicios interactivos, evaluaciones y retroalimentación personalizada.\"",
   "main": "index.js",
   "scripts": {
-    "start": "cd mi-app && npm start",
+    "start": "cd mi-app && react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject"
@@ -27,6 +27,7 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.5.0"
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
   }
 }
