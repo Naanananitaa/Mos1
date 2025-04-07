@@ -31,3 +31,642 @@
     "react-scripts": "^5.0.1"
   }
 }
+
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naanananitaa/Mos1.git"
+  },
+  "keywords": [
+    "habilidad",
+    "lectoescritura",
+    "psicologia"
+  ],
+  "author": "Natalie Perez Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naanananitaa/Mos1/issues"
+  },
+  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "cd mi-app && react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
