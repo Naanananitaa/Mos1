@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom'; // Importamos Link
-import Inicio from './pages/inicio';
-import Contacto from './pages/contacto';
-import Evaluacion from './pages/Evaluacion';
-import Lecciones from './pages/Lecciones';
-import Herramientas from './pages/herramientas';
-import Lecturas from './pages/lecturas';
-import Progreso from './pages/Progreso';
+import Inicio from './pages/inicio.js';
+import Contacto from './pages/contacto.js'; // Agrega la extensión .js
+import Evaluacion from './pages/Evaluacion.js';
+import Lecciones from './pages/Lecciones.js';
+import Herramientas from './pages/herramientas.js';
+import Lecturas from './pages/lecturas.js';
+import Progreso from './pages/Progreso.js';
 
 // Definimos las rutas para la navegación
 const router = createBrowserRouter([
