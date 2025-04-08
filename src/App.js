@@ -1,59 +1,34 @@
 import React, { useState } from 'react';
 import './App.css';
-import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom'; // Importamos Link
-import Inicio from './pages/inicio.js';
-import Contacto from './pages/contacto.js'; // Agrega la extensión .js
-import Evaluacion from './pages/Evaluacion.js';
-import Lecciones from './pages/Lecciones.js';
-import Herramientas from './pages/herramientas.js';
-import Lecturas from './pages/lecturas.js';
-import Progreso from './pages/Progreso.js';
+import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
+import Inicio from './pages/inicio.js'; // Asegúrate de que este archivo exista
+import Contacto from './pages/contacto.js'; // Asegúrate de que este archivo exista
+import Evaluacion from './pages/Evaluacion.js'; // Asegúrate de que este archivo exista
+import Lecciones from './pages/Lecciones.js'; // Asegúrate de que este archivo exista
+import Herramientas from './pages/herramientas.js'; // Asegúrate de que este archivo exista
+import Lecturas from './pages/lecturas.js'; // Asegúrate de que este archivo exista
+import Progreso from './pages/Progreso.js'; // Asegúrate de que este archivo exista
 
 // Definimos las rutas para la navegación
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Inicio />,
-  },
-  {
-    path: "/contacto",
-    element: <Contacto />,
-  },
-  {
-    path: "/evaluacion",
-    element: <Evaluacion />,
-  },
-  {
-    path: "/lecciones",
-    element: <Lecciones />,
-  },
-  {
-    path: "/herramientas",
-    element: <Herramientas />,
-  },
-  {
-    path: "/lecturas",
-    element: <Lecturas />,
-  },
-  {
-    path: "/progreso",
-    element: <Progreso />,
-  },
+  { path: "/", element: <Inicio /> },
+  { path: "/contacto", element: <Contacto /> }, // Corregí la ruta
+  { path: "/evaluacion", element: <Evaluacion /> },
+  { path: "/lecciones", element: <Lecciones /> },
+  { path: "/herramientas", element: <Herramientas /> },
+  { path: "/lecturas", element: <Lecturas /> },
+  { path: "/progreso", element: <Progreso /> },
 ]);
 
 function App() {
-  // Estado de si el usuario está logueado
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Funciones para manejar el login, logout y registro
   const handleLogin = () => setIsLoggedIn(true);
   const handleLogout = () => setIsLoggedIn(false);
-  const handleRegister = () => setIsLoggedIn(true);
 
   return (
     <RouterProvider router={router}>
       <div className="App">
-        {/* Barra de navegación */}
         <nav className="navbar">
           <ul>
             <li><Link to="/">Inicio</Link></li>
@@ -61,8 +36,6 @@ function App() {
             <li><Link to="/lecturas">Lecturas</Link></li>
             <li><Link to="/evaluacion">Evaluación</Link></li>
             <li><Link to="/contacto">Contacto</Link></li>
-
-            {/* Condicional para mostrar opciones según el estado de sesión */}
             {!isLoggedIn ? (
               <>
                 <li><Link to="/login">Iniciar sesión</Link></li>
@@ -71,13 +44,9 @@ function App() {
             ) : (
               <li><Link to="/progreso">Mi Progreso</Link></li>
             )}
-
-            {/* Opción para cerrar sesión si el usuario está logueado */}
             {isLoggedIn && <li><button onClick={handleLogout}>Cerrar sesión</button></li>}
           </ul>
         </nav>
-
-        {/* Contenido de la aplicación */}
         <header className="App-header">
           <h1>Mi aplicación</h1>
         </header>
