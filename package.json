@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "cd mi-app && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject"
@@ -31,12 +31,12 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.5.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.22.20",
-    "@babel/preset-env": "^7.22.20",
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.22.20",
     "@babel/plugin-transform-optional-catch-binding": "^7.22.20",
-    "@babel/plugin-transform-nullish-coalescing-operator": "^7.22.20"
+    "@babel/preset-env": "^7.22.20"
   }
 }
