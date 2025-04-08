@@ -39,5 +39,17 @@
     "@babel/plugin-transform-optional-catch-binding": "^7.22.20",
     "@babel/preset-env": "^7.22.20",
     "yargs-parser": "^21.1.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
