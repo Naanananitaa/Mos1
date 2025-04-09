@@ -19,5 +19,9 @@
     "url": "https://github.com/Naanananitaa/Mos1/issues"
   },
   "homepage": "https://github.com/Naanananitaa/Mos1#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.2.5"
+  }
 }
