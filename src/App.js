@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
-import Inicio from './pages/inicio.js'; // Asegúrate de que este archivo exista
-import Contacto from './pages/contacto.js'; // Asegúrate de que este archivo exista
-import Evaluacion from './pages/Evaluacion.js'; // Asegúrate de que este archivo exista
-import Lecciones from './pages/Lecciones.js'; // Asegúrate de que este archivo exista
-import Herramientas from './pages/herramientas.js'; // Asegúrate de que este archivo exista
-import Lecturas from './pages/lecturas.js'; // Asegúrate de que este archivo exista
-import Progreso from './pages/Progreso.js'; // Asegúrate de que este archivo exista
+import Inicio from './pages/inicio.js';
+import Contacto from './pages/contacto.js';
+import Evaluacion from './pages/Evaluacion.js';
+import Lecciones from './pages/Lecciones.js';
+import Herramientas from './pages/herramientas.js';
+import Lecturas from './pages/lecturas.js';
+import Progreso from './pages/Progreso.js';
 
 // Definimos las rutas para la navegación
 const router = createBrowserRouter([
   { path: "/", element: <Inicio /> },
-  { path: "/contacto", element: <Contacto /> }, // Corregí la ruta
+  { path: "/contacto", element: <Contacto /> },
   { path: "/evaluacion", element: <Evaluacion /> },
   { path: "/lecciones", element: <Lecciones /> },
   { path: "/herramientas", element: <Herramientas /> },

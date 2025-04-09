@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Inicio from './pages/inicio.js'; // Agrega la extensión .js
+import App from './App.js'; // Cambia Inicio por App
 
 ReactDOM.render(
   <React.StrictMode>
-    <Inicio />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
