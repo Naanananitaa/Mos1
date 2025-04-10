@@ -1,31 +1,7 @@
 {
-  "name": "mos1",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Naanananitaa/Mos1.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Naanananitaa/Mos1/issues"
-  },
-  "homepage": "https://github.com/Naanananitaa/Mos1#readme",
-  "description": "",
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^6.2.5"
-  },
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.3"
   }
 }
