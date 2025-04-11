@@ -2,16 +2,20 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from "./components/Header";
 
-export default function App() {
+function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-blue-100">
-      <h1 className="text-4xl font-bold text-blue-700 mb-4">
-        ¡Hola, Tailwind en React!
-      </h1>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Presióname
-      </button>
-    </div>
+    <>
+      <Header />
+      <main className="p-8">
+        <h2 className="text-2xl font-semibold mb-4">Bienvenida, Natalie 🌟</h2>
+        <p className="text-gray-700">
+          Este es el inicio de tu plataforma educativa. Aquí irán los módulos, ejercicios y recursos.
+        </p>
+      </main>
+    </>
   );
 }
+
+export default App;
