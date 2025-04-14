@@ -13,7 +13,7 @@ const Header = () => {
 
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="Poseidon Logo" className="h-6 w-6" />
+          <img src="/logo.png" alt="." className="h-6 w-6" />
           <span className="font-semibold text-lg text-gray-800">Mos Proyect</span>
         </div>
 
@@ -42,7 +42,7 @@ const Header = () => {
 
       {/* Menú móvil desplegable */}
       {isMenuOpen && (
-        <div className="block md:hidden bg-white shadow-md px-4 pb-4 pt-2 flex flex-col gap-3 text-sm font-semibold text-gray-700 animate-slide-down">
+        <div className="md:hidden bg-white shadow-md px-4 pb-4 pt-2 flex flex-col gap-3 text-sm font-semibold text-gray-700 animate-slide-down">
           <a href="#" className="hover:text-black transition-colors">HOME</a>
           <a href="#" className="hover:text-black transition-colors">PRODUCTS</a>
           <a href="#" className="hover:text-black transition-colors">ABOUT US</a>
