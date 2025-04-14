@@ -13,7 +13,7 @@ const Header = () => {
 
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="." className="h-6 w-6" />
+          <img src="/logo.png" alt="Logo" className="h-6 w-6 sm:h-8 sm:w-8" />
           <span className="font-semibold text-lg text-gray-800">Mos Proyect</span>
         </div>
 
@@ -26,7 +26,7 @@ const Header = () => {
         </button>
 
         {/* Navegación para pantallas medianas en adelante */}
-        <nav className="hidden md:flex gap-8 text-sm font-semibold text-gray-700">
+        <nav className={`hidden md:flex gap-8 text-sm font-semibold text-gray-700 ${isMenuOpen ? 'block' : 'hidden'}`}>
           <a href="#" className="hover:text-black transition-colors">HOME</a>
           <a href="#" className="hover:text-black transition-colors">PRODUCTS</a>
           <a href="#" className="hover:text-black transition-colors">ABOUT US</a>
