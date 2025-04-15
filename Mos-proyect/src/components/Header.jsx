@@ -1,63 +1,64 @@
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import React from "react";
+import { FaHeadphonesAlt, FaLock, FaUser } from "react-icons/fa";
+import { ChevronDown } from "lucide-react";
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
+export default function Header() {
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-2xl font-extrabold text-blue-600 tracking-tight">
-          MOS Project
+    <header className="w-full border-b border-gray-200 text-sm font-medium">
+      {/* Top Bar */}
+      <div className="flex justify-between items-center px-6 py-3">
+        <div className="flex items-center gap-2 text-gray-700">
+          <FaHeadphonesAlt className="text-lg" />
+          <span>24/7</span>
+          <span>037-2339-9874</span>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8 text-base font-medium text-gray-700">
-          {["HOME", "PRODUCTS", "ABOUT US", "CONTACTS"].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="hover:text-blue-600 transition-colors duration-300"
-            >
-              {item}
-            </a>
-          ))}
-        </nav>
+        <div className="text-2xl font-extrabold tracking-wide text-gray-900">
+          arbuzz
+        </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-blue-600 focus:outline-none transition-transform duration-200"
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+        <div className="flex items-center gap-4 text-gray-700">
+          <div className="flex items-center gap-1 cursor-pointer">
+            <span>EN</span>
+            <ChevronDown className="w-4 h-4 text-red-500" />
+          </div>
+          <div className="flex items-center gap-1 cursor-pointer">
+            <span>USD</span>
+            <ChevronDown className="w-4 h-4 text-red-500" />
+          </div>
+          <FaLock className="text-lg cursor-pointer" />
+          <div className="flex items-center gap-1 cursor-pointer">
+            <FaUser className="text-lg" />
+            <span className="text-gray-400">LOG IN</span>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden px-6 pb-4 bg-white border-t border-gray-200">
-          <nav className="flex flex-col gap-4 text-base font-medium text-gray-700">
-            {["HOME", "PRODUCTS", "ABOUT US", "CONTACTS"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="hover:text-blue-600 transition-colors duration-300"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-        </div>
-      )}
+      {/* Navigation Bar */}
+      <nav className="flex justify-center items-center gap-6 py-2 bg-white">
+        {[
+          "MEN",
+          "WOMEN",
+          "KIDS",
+          "COLLECTION",
+          "OUTERWEAR",
+          "SALE",
+          "ABOUT",
+          "BLOG",
+          "SERVICES",
+          "CONTACTS",
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-1 text-gray-800 uppercase hover:text-red-500 cursor-pointer"
+          >
+            <span>{item}</span>
+            {["MEN", "WOMEN", "KIDS", "COLLECTION", "OUTERWEAR"].includes(item) && (
+              <ChevronDown className="w-4 h-4 text-red-500" />
+            )}
+          </div>
+        ))}
+      </nav>
     </header>
   );
-};
-
-export default Header;
+}
