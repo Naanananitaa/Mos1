@@ -26,7 +26,7 @@ const Header = () => {
         </button>
 
         {/* Navegación para pantallas medianas en adelante */}
-        <nav className={`hidden md:flex gap-8 text-sm font-semibold text-gray-700 ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <nav className="hidden md:flex gap-8 text-sm font-semibold text-gray-700">
           <a href="#" className="hover:text-black transition-colors">HOME</a>
           <a href="#" className="hover:text-black transition-colors">PRODUCTS</a>
           <a href="#" className="hover:text-black transition-colors">ABOUT US</a>
