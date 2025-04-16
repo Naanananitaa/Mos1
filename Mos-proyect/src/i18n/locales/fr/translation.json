@@ -1,0 +1,15 @@
+{
+    "support": "Assistance",
+    "login": "Connexion",
+    "nav": {
+      "home": "Accueil",
+      "lessons": "Leçons",
+      "exercises": "Exercices",
+      "assessments": "Évaluations",
+      "glossary": "Glossaire",
+      "resources": "Ressources",
+      "tools": "Outils",
+      "contact": "Contactez-nous"
+    }
+  }
+  
