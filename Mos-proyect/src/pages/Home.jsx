@@ -1,11 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-3xl font-bold text-blue-800">
-        ¡Bienvenida a la plataforma!
-      </h1>
+    <div>
+      <h1>{t('welcome_message')}</h1>
     </div>
   );
 };
