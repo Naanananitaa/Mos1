@@ -1,17 +1,21 @@
-import React from 'react';
-import Home from './pages/Home';
-import Header from './components/Header';
-import './i18n/i18n';
+// App.jsx
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header.jsx';
+import Home from './pages/Home.jsx';
+import Login from './components/Login.jsx';
+import Register from './components/Register.jsx';
+import ForgotPassword from "./components/ForgotPassword";
 
-function App() {
+export default function App() { 
   return (
     <>
       <Header />
-      <main className="p-6">
-        <Home />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+      </Routes>
     </>
   );
 }
-
-export default App;
