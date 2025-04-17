@@ -3,12 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const { t } = useTranslation();
-
-  return (
-    <div>
-      <h1>{t('welcome_message')}</h1>
-    </div>
-  );
-};
-
-export default Home;
+    return <div>Bienvenido a Mos-proyect</div>;
+  };
+  
+  export default Home;
+  
