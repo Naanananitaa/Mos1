@@ -1,153 +1,127 @@
-import { useState } from "react";
-import { Mail, Lock } from "lucide-react";
-import axios from "axios";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
-export default function AuthForm() {
-  const [modo, setModo] = useState("login"); // 'login' o 'register'
-  const esRegistro = modo === "register";
+const Login = () => {
+  const navigate = useNavigate()
 
-  const [correo, setCorreo] = useState("");
-  const [correoTocado, setCorreoTocado] = useState(false);
-  const [contrasena, setContrasena] = useState("");
-  const [contrasenaTocada, setContrasenaTocada] = useState(false);
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [errors, setErrors] = useState({})
+  const [passwordChecks, setPasswordChecks] = useState({
+    length: false,
+    upper: false,
+    lower: false,
+    number: false,
+  })
 
-  const PORT = 3001;
-  const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const contrasenaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-  const esCorreoValido = correoRegex.test(correo);
-  const esContrasenaValida = contrasenaRegex.test(contrasena);
+  const validateFields = () => {
+    const newErrors = {}
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setCorreoTocado(true);
-    setContrasenaTocada(true);
-    if (!esCorreoValido || !esContrasenaValida) return;
+    // Email básico
+    if (!email.includes('@') || !email.includes('.')) {
+      newErrors.email = 'El correo debe contener "@" y un punto.'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = 'Formato de correo no válido.'
+    }
+
+    // Validación de contraseña
+    const checks = {
+      length: password.length >= 8,
+      upper: /[A-Z]/.test(password),
+      lower: /[a-z]/.test(password),
+      number: /[0-9]/.test(password),
+    }
+
+    setPasswordChecks(checks)
+
+    if (Object.values(checks).includes(false)) {
+      newErrors.password = 'La contraseña no cumple con todos los requisitos.'
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleLogin = async (e) => {
+    e.preventDefault()
+
+    if (!validateFields()) return
 
     try {
-      const url = esRegistro
-        ? `http://localhost:${PORT}/api/register`
-        : `http://localhost:${PORT}/api/login`;
+      const response = await axios.post('http://localhost:3000/api/login', {
+        email,
+        password
+      })
 
-      const response = await axios.post(url, {
-        email: correo,
-        password: contrasena,
-      });
-
-      console.log(`${esRegistro ? "Registro" : "Login"} exitoso`, response.data);
+      if (response.data.success) {
+        alert('¡Inicio de sesión exitoso!')
+        // Redirigir a dashboard u otra página
+        navigate('/dashboard')
+      } else {
+        setErrors({ general: response.data.message })
+      }
     } catch (error) {
-      console.error("Error:", error.response?.data || error.message);
+      setErrors({ general: 'Error de conexión con el servidor.' })
     }
-  };
-
-  const cambiarModo = () => {
-    setModo((prev) => (prev === "login" ? "register" : "login"));
-    setCorreo("");
-    setContrasena("");
-    setCorreoTocado(false);
-    setContrasenaTocada(false);
-  };
+  }
 
   return (
-    <div className="w-full max-w-4xl mx-auto h-[550px] overflow-hidden rounded-xl shadow-lg bg-gray-100">
-      <div className="flex w-full h-full relative">
-        <AnimatePresence initial={false} mode="wait">
-          <motion.div
-            key={modo}
-            initial={{ x: modo === "register" ? "100%" : "-100%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: modo === "register" ? "-100%" : "100%", opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="absolute top-0 left-0 w-full h-full bg-white flex"
+    <div className="flex h-screen">
+      {/* Login */}
+      <div className="w-1/2 bg-white p-10 flex flex-col justify-center">
+        <h2 className="text-3xl font-bold text-gray-700 mb-6">Iniciar sesión</h2>
+
+        <div className="flex gap-4 mb-6">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">Facebook</button>
+          <button className="bg-red-500 text-white px-4 py-2 rounded-lg">Google</button>
+          <button className="bg-blue-400 text-white px-4 py-2 rounded-lg">LinkedIn</button>
+        </div>
+
+        {errors.general && <p className="text-red-500 mb-2">{errors.general}</p>}
+
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Correo electrónico"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={`mb-2 px-4 py-2 border rounded-lg w-full ${errors.email ? 'border-red-500' : ''}`}
+          />
+          {errors.email && <p className="text-red-500 text-sm mb-2">{errors.email}</p>}
+
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={`mb-2 px-4 py-2 border rounded-lg w-full ${errors.password ? 'border-red-500' : ''}`}
+          />
+
+          <a href="#" className="text-blue-500 text-sm mb-4 block">¿Olvidaste tu contraseña?</a>
+
+          <button
+            type="submit"
+            className="bg-green-500 text-white px-4 py-2 rounded-lg w-full"
           >
-            {/* Panel del formulario */}
-            <div className="w-1/2 p-10 flex flex-col justify-center">
-              <h2 className="text-3xl font-bold text-blue-500 mb-6 text-center">
-                {esRegistro ? "Crea una cuenta" : "Inicia sesión"}
-              </h2>
+            Iniciar sesión
+          </button>
+        </form>
+      </div>
 
-              <p className="text-gray-500 text-sm text-center mb-6">
-                Usa tu correo electrónico para continuar
-              </p>
-
-              <form onSubmit={handleSubmit}>
-                {/* Correo */}
-                <div className="mb-4 relative">
-                  <Mail className="absolute left-3 top-3 text-gray-400" size={20} />
-                  <input
-                    type="email"
-                    placeholder="Correo electrónico"
-                    value={correo}
-                    onChange={(e) => setCorreo(e.target.value)}
-                    onBlur={() => setCorreoTocado(true)}
-                    className={`pl-12 w-full p-3 border rounded ${
-                      correoTocado && !esCorreoValido ? "border-red-500" : "border-gray-300"
-                    }`}
-                  />
-                  {correoTocado && !esCorreoValido && (
-                    <p className="text-sm text-red-500 mt-1">Correo no válido.</p>
-                  )}
-                </div>
-
-                {/* Contraseña */}
-                <div className="mb-4 relative">
-                  <Lock className="absolute left-3 top-3 text-gray-400" size={20} />
-                  <input
-                    type="password"
-                    placeholder="Contraseña"
-                    value={contrasena}
-                    onChange={(e) => setContrasena(e.target.value)}
-                    onBlur={() => setContrasenaTocada(true)}
-                    className={`pl-12 w-full p-3 border rounded ${
-                      contrasenaTocada && !esContrasenaValida ? "border-red-500" : "border-gray-300"
-                    }`}
-                  />
-                  {contrasenaTocada && !esContrasenaValida && (
-                    <p className="text-sm text-red-500 mt-1">
-                      Mínimo 8 caracteres, una mayúscula, una minúscula y un número.
-                    </p>
-                  )}
-                </div>
-
-                {!esRegistro && (
-                  <a href="#" className="text-sm text-gray-500 hover:text-blue-400 mb-4 block text-right">
-                    ¿Olvidaste tu contraseña?
-                  </a>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={!esCorreoValido || !esContrasenaValida}
-                  className={`py-3 w-full rounded text-lg font-semibold mt-4 transition ${
-                    !esCorreoValido || !esContrasenaValida
-                      ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                      : "bg-blue-500 text-white hover:bg-blue-400"
-                  }`}
-                >
-                  {esRegistro ? "REGISTRARSE" : "INICIAR SESIÓN"}
-                </button>
-              </form>
-            </div>
-
-            {/* Panel lateral */}
-            <div className="w-1/2 flex flex-col items-center justify-center text-white bg-blue-500 px-10 text-center">
-              <h2 className="text-2xl font-bold mb-4">
-                {esRegistro ? "¡Bienvenido!" : "¡Aún no formas parte!"}
-              </h2>
-              <p className="text-lg mb-6">
-                {esRegistro ? "Únete y forma parte de nuestra comunidad." : "Regístrate y únete a nuestra comunidad."}
-              </p>
-
-              <button
-                onClick={cambiarModo}
-                className="px-6 py-3 bg-white text-blue-400 font-bold rounded-lg shadow-md hover:bg-gray-200 transition"
-              >
-                {esRegistro ? "Iniciar Sesión" : "Registrarse"}
-              </button>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+      {/* Registro */}
+      <div className="w-1/2 bg-gradient-to-r from-blue-400 to-blue-600 text-white p-10 flex flex-col justify-center items-center">
+        <h2 className="text-3xl font-bold mb-4">Hello, Friend!</h2>
+        <p className="mb-6 text-center">Ingresa tus datos personales y comienza tu experiencia en la plataforma</p>
+        <button
+          onClick={() => navigate('/register')}
+          className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition"
+        >
+          Regístrate
+        </button>
       </div>
     </div>
-  );
+  )
 }
+
+export default Login
