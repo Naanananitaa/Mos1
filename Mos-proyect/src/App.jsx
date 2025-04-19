@@ -10,6 +10,7 @@ import Glossary from "./pages/Glossary";
 import Resources from "./pages/Resources";
 import Tools from "./pages/Tools";
 import Contact from "./pages/Contact";
+import MiProgreso from "./pages/MiProgreso";
 
 // Páginas de usuario
 import Login from "./components/Login";
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/tools" element={<Tools />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/mi-progreso" element={<MiProgreso />} />
 
         {/* Usuario */}
         <Route path="/login" element={<Login />} />

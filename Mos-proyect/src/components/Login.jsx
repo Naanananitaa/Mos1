@@ -49,7 +49,7 @@ const Login = () => {
     if (!validateFields()) return
 
     try {
-      const response = await axios.post('http://localhost:3000/api/login', {
+      const response = await axios.post('http://localhost:3001/api/login', {
         email,
         password
       })
@@ -102,7 +102,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="bg-green-500 text-white px-4 py-2 rounded-lg w-full"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg w-full"
           >
             Iniciar sesión
           </button>
