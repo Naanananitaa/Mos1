@@ -3,7 +3,7 @@ const MiProgreso = () => {
       <div className="p-6">
         <h1 className="text-3xl font-bold mb-4">Mi perfil</h1>
         <p>Aquí podrás visualizar tu avance en las lecciones, ejercicios y evaluaciones.</p>
-        <h6>Personalización</h6>
+        <h5>Personalización</h5>
         <p>Aqui se presentaran las modificaciones al entorno de la interfaz:
           <li>Color de fondo</li>
           <li>Color de texto</li>
