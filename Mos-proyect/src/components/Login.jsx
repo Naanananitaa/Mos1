@@ -56,8 +56,8 @@ const Login = () => {
 
       if (response.data.success) {
         alert('¡Inicio de sesión exitoso!')
-        // Redirigir a dashboard u otra página
-        navigate('/dashboard')
+        localStorage.setItem("auth", "true");
+        navigate('/mi-perfil')       
       } else {
         setErrors({ general: response.data.message })
       }

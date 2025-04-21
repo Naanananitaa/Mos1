@@ -3,11 +3,15 @@ import { FaHeadphonesAlt, FaUser } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
   const [languageOpen, setLanguageOpen] = useState(false);
   const navigate = useNavigate();
+  const isAuthenticated = localStorage.getItem("auth") === "true";
+
+  const { isLoggedIn } = useAuth(); // Aquí obtenemos el estado de login real
 
   const languages = [
     { code: "es", label: "Español", emoji: "🇪🇸" },
@@ -84,14 +88,25 @@ export default function Header() {
             </div>
           )}
 
-          {/* Login directo */}
-          <div
-            className="flex items-center gap-1 cursor-pointer text-gray-700"
-            onClick={() => navigate("/login")}
-          >
-            <FaUser className="text-lg" />
-            <span className="text-gray-400">{t("login")}</span>
-          </div>
+          {/* Login o Perfil según estado */}
+          {/* Condicional: Login o Mi Perfil */}
+          {isAuthenticated ? (
+            <div
+              className="flex items-center gap-1 cursor-pointer text-gray-700"
+              onClick={() => navigate("/mi-perfil")}
+            >
+              <FaUser className="text-lg" />
+              <span className="text-blue-400">Mi Perfil</span>
+            </div>
+          ) : (
+            <div
+              className="flex items-center gap-1 cursor-pointer text-gray-700"
+              onClick={() => navigate("/login")}
+            >
+              <FaUser className="text-lg" />
+              <span className="text-gray-400">{t("login")}</span>
+            </div>
+          )}
         </div>
       </div>
 
