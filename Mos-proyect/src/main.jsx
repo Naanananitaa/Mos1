@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         v7_relativeSplatPath: true
       }}
     >
-      <AuthProvider> {/* ✅ Envuelve la app */}
+      <AuthProvider> 
         <App />
       </AuthProvider>
     </BrowserRouter>

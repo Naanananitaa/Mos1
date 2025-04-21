@@ -9,10 +9,11 @@ export default function Header() {
   const { t, i18n } = useTranslation();
   const [languageOpen, setLanguageOpen] = useState(false);
   const navigate = useNavigate();
-  const isAuthenticated = localStorage.getItem("auth") === "true";
+  const { isAuthenticated } = useAuth();
+  const { isLoggedIn } = useAuth(); // Estado de login real
+  const { logout } = useAuth(); //Estado de logout real
 
-  const { isLoggedIn } = useAuth(); // Aquí obtenemos el estado de login real
-
+  
   const languages = [
     { code: "es", label: "Español", emoji: "🇪🇸" },
     { code: "en", label: "English", emoji: "🇺🇸" },
@@ -87,8 +88,7 @@ export default function Header() {
               ))}
             </div>
           )}
-
-          {/* Login o Perfil según estado */}
+          
           {/* Condicional: Login o Mi Perfil */}
           {isAuthenticated ? (
             <div
@@ -107,6 +107,17 @@ export default function Header() {
               <span className="text-gray-400">{t("login")}</span>
             </div>
           )}
+          {isAuthenticated && (
+          <div
+            onClick={() => {
+              logout();
+              navigate("/");
+            }}
+            className="cursor-pointer text-red-400"
+          >
+            Cerrar sesión
+          </div>
+        )}
         </div>
       </div>
 

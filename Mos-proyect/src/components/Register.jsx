@@ -9,6 +9,8 @@ const Register = () => {
     email: '',
     password: ''
   })
+  localStorage.setItem("auth", "true");
+  navigate("/mi-perfil");
 
   const [errors, setErrors] = useState({})
   const [successMessage, setSuccessMessage] = useState('')
@@ -62,6 +64,8 @@ const Register = () => {
       setErrors({ general: 'No se pudo conectar al servidor.' })
     }
   }
+
+  
 
   return (
     <div className="flex h-screen">

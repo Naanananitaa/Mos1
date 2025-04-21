@@ -1,28 +1,27 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Aquí verificamos si hay sesión almacenada (ejemplo con localStorage)
   useEffect(() => {
-    const userSession = localStorage.getItem("isLoggedIn");
-    if (userSession === "true") setIsLoggedIn(true);
+    const authStatus = localStorage.getItem("auth") === "true";
+    setIsAuthenticated(authStatus);
   }, []);
 
   const login = () => {
-    setIsLoggedIn(true);
-    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("auth", "true");
+    setIsAuthenticated(true);
   };
 
   const logout = () => {
-    setIsLoggedIn(false);
-    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("auth");
+    setIsAuthenticated(false);
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

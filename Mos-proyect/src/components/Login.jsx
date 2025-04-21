@@ -56,8 +56,10 @@ const Login = () => {
 
       if (response.data.success) {
         alert('¡Inicio de sesión exitoso!')
-        localStorage.setItem("auth", "true");
-        navigate('/mi-perfil')       
+        const { login } = useAuth();
+        login();
+        navigate("/mi-perfil");
+      
       } else {
         setErrors({ general: response.data.message })
       }
