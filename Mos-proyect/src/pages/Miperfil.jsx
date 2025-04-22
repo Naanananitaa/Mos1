@@ -9,7 +9,8 @@ const MiProgreso = () => {
           <li>Color de texto</li>
           <li>Tipo de letra</li>
         </p>
-        <p>Aquí irán las gráficas, tablas e información personalizada</p>
+        <p>Aquí irán las gráficas, tablas e información personalizada
+        errores corregidos, tiempo de uso</p>
       </div>
     )
   }
