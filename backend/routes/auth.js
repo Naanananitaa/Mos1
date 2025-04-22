@@ -20,15 +20,17 @@ const writeUsers = (users) => {
 };
 
 // Validaciones
-const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+//E-mail
+const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); 
 
+//Contraseña
 const isValidPassword = (password) =>
-  password.length >= 8 &&
-  /[A-Z]/.test(password) &&
-  /[a-z]/.test(password) &&
-  /[0-9]/.test(password);
+  password.length >= 8 && //Numero de caracteres requeridos
+  /[A-Z]/.test(password) && //Mayúsculas
+  /[a-z]/.test(password) && //Minúsculas
+  /[0-9]/.test(password); //Números
 
-// 🚀 POST /api/register
+//api/register
 router.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -72,7 +74,7 @@ router.post("/register", async (req, res) => {
     .json({ success: true, message: "Usuario registrado exitosamente." });
 });
 
-// 🚀 POST /api/login
+//api/login
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 

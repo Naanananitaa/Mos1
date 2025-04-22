@@ -23,23 +23,29 @@ const Register = () => {
     const newErrors = {}
 
     if (!formData.name.trim()) {
-      newErrors.name = 'El nombre es obligatorio.'
+      newErrors.name = 'Campo obligatorio.'
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'El correo electrónico no es válido.'
     }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Campo obligatorio.'
+    }
 
     const password = formData.password
     const validPassword =
       password.length >= 8 &&
-      /[A-Z]/.test(password) &&
-      /[a-z]/.test(password) &&
-      /[0-9]/.test(password)
+      /[A-Z]/.test(password) && //Mayusculas
+      /[a-z]/.test(password) && //Minusculas
+      /[0-9]/.test(password)    //Numeros
 
     if (!validPassword) {
       newErrors.password =
         'La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula y un número.'
+    }
+    if (!formData.password.trim()) {
+      newErrors.password = 'Campo obligatorio.'
     }
 
     setErrors(newErrors)
@@ -55,8 +61,8 @@ const Register = () => {
       if (response.data.success) {
         setSuccessMessage('Registro exitoso. Redirigiendo a tu progreso...')
         setTimeout(() => {
-          navigate('/mi-progreso') // Cambia esta ruta según cómo la definas
-        }, 2000)
+          navigate('/mi-progreso') 
+        }, 500)
       } else {
         setErrors({ general: response.data.message || 'Error en el registro.' })
       }
@@ -65,15 +71,13 @@ const Register = () => {
     }
   }
 
-  
-
   return (
     <div className="flex h-screen">
       {/* Panel izquierdo */}
       <div className="w-1/2 bg-blue-500 text-white p-10 flex flex-col justify-center items-center">
-        <h2 className="text-3xl font-bold mb-4">Welcome Back!</h2>
+        <h2 className="text-3xl font-bold mb-4">¿Ya tienes cuenta?</h2>
         <p className="mb-6 text-center">
-          To keep connected with us please login with your personal info
+          Si ya formas parte de nuestra comunidad, inicia sesión para continuar tu progreso y acceder a tus recursos.
         </p>
         <button
           onClick={() => navigate('/login')}
