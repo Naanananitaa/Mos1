@@ -1,10 +1,13 @@
 import { Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
 import Header from "./components/Header";
 
 // Páginas principales
 import Home from "./pages/Home";
 import Lessons from "./pages/Lessons";
-import Exercises from "./pages/Exercises";
+import ExercisesMenu from './pages/Exercises';
+    import SelectionExercise from './pages/SelectionExercise';
+    import ResultadosFinales from './pages/SeleccionRF';
 import Assessments from "./pages/Assessments";
 import Glossary from "./pages/Glossary";
 import Resources from "./pages/Resources";
@@ -19,6 +22,8 @@ import ForgotPassword from "./components/ForgotPassword";
 import SupportChat from "./pages/SupportChat";
 
 export default function App() {
+  const [logData, setLogData] = useState(null);  // Definir el estado 'logData'
+
   return (
     <>
       <Header />
@@ -26,7 +31,9 @@ export default function App() {
         {/* Navegación principal */}
         <Route path="/" element={<Home />} />
         <Route path="/lessons" element={<Lessons />} />
-        <Route path="/exercises" element={<Exercises />} />
+        <Route path="/exercises" element={<ExercisesMenu />} />
+        <Route path="/ejercicios/seleccion" element={<SelectionExercise />} />
+        <Route path="/resultados" element={<ResultadosFinales logData={logData} />} />
         <Route path="/assessments" element={<Assessments />} />
         <Route path="/glossary" element={<Glossary />} />
         <Route path="/resources" element={<Resources />} />
