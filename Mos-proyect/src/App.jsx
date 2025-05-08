@@ -8,6 +8,8 @@ import Lessons from "./pages/Lessons";
 import ExercisesMenu from './pages/Exercises';
     import SelectionExercise from './pages/SelectionExercise';
     import ResultadosFinales from './pages/SeleccionRF';
+    import Underline from './pages/SubrayadoExercise';
+    import ResultadosSubrayado from './pages/SubrayadoRF';
 import Assessments from "./pages/Assessments";
 import Glossary from "./pages/Glossary";
 import Resources from "./pages/Resources";
@@ -32,8 +34,10 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/lessons" element={<Lessons />} />
         <Route path="/exercises" element={<ExercisesMenu />} />
-        <Route path="/ejercicios/seleccion" element={<SelectionExercise />} />
-        <Route path="/resultados" element={<ResultadosFinales logData={logData} />} />
+          <Route path="/ejercicios/seleccion" element={<SelectionExercise />} />
+          <Route path="/resultados" element={<ResultadosFinales logData={logData} />} />
+          <Route path="/ejercicios/subrayado" element={<Underline />} />
+          <Route path="/resultados-subrayado" element={<ResultadosSubrayado />} />
         <Route path="/assessments" element={<Assessments />} />
         <Route path="/glossary" element={<Glossary />} />
         <Route path="/resources" element={<Resources />} />

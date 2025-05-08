@@ -1,140 +1,163 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar } from 'recharts';
 
-const ResultadosFinales = ({ logData }) => {
-  // Variables para el registro de los resultados
-  const [resultados, setResultados] = useState({
-    respuestasCorrectas: 0,
-    respuestasIncorrectas: 0,
-    porcentajeAciertos: 0,
-    inicioActividad: '',
-    primerClic: 0,
-    tiempoTotal: 0,
-    conteoClicsTotales: 0,
-    palabrasOmitidas: [],
-    erroresComunes: [],
-    tiempoPromedioPorPalabra: 0,
-    secuenciaSeleccion: []
-  });
-
-  // Variables temporales
-  const [inicio, setInicio] = useState(null);
-  const [primerClicTiempo, setPrimerClicTiempo] = useState(null);
-  const [tiempoFinal, setTiempoFinal] = useState(null);
-  const [secuenciaSeleccion, setSecuenciaSeleccion] = useState([]);
-  const [erroresComunes, setErroresComunes] = useState([]);
-  
-  useEffect(() => {
-    // Registrar el inicio de la actividad cuando el componente se monte
-    const now = new Date();
-    setInicio(now);
-    setResultados(prev => ({ ...prev, inicioActividad: now.toISOString() }));
-
-    // Recuperar datos de interacciones previas si es necesario
-    const storedData = JSON.parse(localStorage.getItem('resultados'));
-    if (storedData) {
-      setResultados(storedData);
+const fragments = [
+    {
+      title: '¿Qué es la conducta?',
+      text: 'La conducta es el conjunto de interacciones entre un organismo y su contexto. Estas interacciones pueden observarse y medirse en función de los cambios que ocurren en el ambiente y en el organismo como resultado de tales relaciones. No se limita a respuestas visibles, sino que también incluye disposiciones temporoespaciales que configuran patrones estables en situaciones similares.',
+      keywords: ['conducta', 'interacciones', 'organismo', 'contexto', 'respuestas']
+    },
+    {
+      title: 'Metodología Cuantitativa',
+      text: 'La metodología cuantitativa se basa en la recolección y análisis de datos numéricos. Permite identificar patrones, establecer relaciones entre variables y generalizar resultados. Emplea técnicas estadísticas y experimentales para describir fenómenos y evaluar hipótesis con rigurosidad. Esta metodología busca objetividad y replicabilidad en la investigación.',
+      keywords: ['metodología cuantitativa', 'datos', 'variables', 'estadísticas', 'hipótesis']
+    },
+    {
+      title: 'El estímulo en psicología',
+      text: 'El estímulo es cualquier cambio en el entorno que puede influir en la conducta de un organismo. En el análisis interconductual, un estímulo no tiene significado por sí solo, sino por las funciones que adquiere dentro de una situación dada. Así, un estímulo puede adquirir diferentes funciones dependiendo del campo interconductual en el que se encuentre el organismo.',
+      keywords: ['estímulo', 'entorno', 'funciones', 'campo interconductual', 'organismo']
     }
-  }, []);
+  ];
 
-  // Función para manejar la selección de palabras
-  const manejarSeleccion = (palabra, esCorrecta) => {
-    const now = new Date();
-    if (!primerClicTiempo) {
-      setPrimerClicTiempo(now);
-    }
+export default function Ejercicios() {
+  const [current, setCurrent] = useState(0);
+  const [selectedWords, setSelectedWords] = useState({});
+  const [startTime, setStartTime] = useState(Date.now());
+  const [firstClickTime, setFirstClickTime] = useState(null);
+  const [logData, setLogData] = useState([]);
+  const navigate = useNavigate();
 
-    // Actualizar secuencia de selección
-    setSecuenciaSeleccion(prev => [...prev, palabra]);
-
-    // Calcular respuestas correctas e incorrectas
-    if (esCorrecta) {
-      setResultados(prev => ({
-        ...prev,
-        respuestasCorrectas: prev.respuestasCorrectas + 1
-      }));
-    } else {
-      setResultados(prev => ({
-        ...prev,
-        respuestasIncorrectas: prev.respuestasIncorrectas + 1
-      }));
-    }
-
-    // Actualizar errores comunes
-    if (esCorrecta === false) {
-      setErroresComunes(prev => [...prev, palabra]);
-    }
+  const handleWordClick = (fragmentIndex, wordIndex) => {
+    const key = `${fragmentIndex}-${wordIndex}`;
+    if (!firstClickTime) setFirstClickTime(Date.now());
+    setSelectedWords(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  // Calcular porcentaje de aciertos
-  useEffect(() => {
-    const totalRespuestas = resultados.respuestasCorrectas + resultados.respuestasIncorrectas;
-    if (totalRespuestas > 0) {
-      const porcentaje = (resultados.respuestasCorrectas / totalRespuestas) * 100;
-      setResultados(prev => ({
-        ...prev,
-        porcentajeAciertos: porcentaje.toFixed(2)
-      }));
-    }
-  }, [resultados.respuestasCorrectas, resultados.respuestasIncorrectas]);
+  const isCorrect = (word, keywords) => {
+    return keywords.includes(word.toLowerCase().replace(/[.,;]/g, ''));
+  };
 
-  // Calcular tiempos
-  useEffect(() => {
-    if (inicio && primerClicTiempo) {
-      const tiempoDesdeInicio = (primerClicTiempo - inicio) / 1000; // En segundos
-      setResultados(prev => ({
-        ...prev,
-        primerClic: tiempoDesdeInicio.toFixed(2)
-      }));
-    }
-    if (tiempoFinal && inicio) {
-      const tiempoTotal = (tiempoFinal - inicio) / 1000; // En segundos
-      setResultados(prev => ({
-        ...prev,
-        tiempoTotal: tiempoTotal.toFixed(2)
-      }));
-    }
-  }, [primerClicTiempo, tiempoFinal, inicio]);
+  const handleNext = () => {
+    const fragment = fragments[current];
+    const words = fragment.text.split(' ');
+    const data = words.map((word, j) => {
+      const key = `${current}-${j}`;
+      const selected = selectedWords[key];
+      const correct = isCorrect(word, fragment.keywords);
+      return { word, selected, correct };
+    });
 
-  // Función para finalizar la actividad y almacenar los datos
-  const finalizarActividad = () => {
-    const tiempoPromedio = resultados.conteoClicsTotales
-      ? (resultados.tiempoTotal / resultados.conteoClicsTotales).toFixed(2)
-      : 0;
+    const correctCount = data.filter(d => d.selected && d.correct).length;
+    const totalSelected = data.filter(d => d.selected).length;
+    const totalTime = Date.now() - startTime;
+    const latency = firstClickTime ? firstClickTime - startTime : null;
 
-    // Calcular las palabras omitidas (deben ser las palabras correctas que no fueron seleccionadas)
-    const palabrasOmitidas = []; // Lógica para encontrar palabras omitidas
-    setResultados(prev => ({
+    setLogData(prev => [
       ...prev,
-      tiempoPromedioPorPalabra: tiempoPromedio,
-      palabrasOmitidas
-    }));
+      {
+        fragmentTitle: fragment.title,
+        correctCount,
+        totalSelected,
+        percentageCorrect: totalSelected ? (correctCount / totalSelected) * 100 : 0,
+        totalTime,
+        latency
+      }
+    ]);
 
-    // Guardar los resultados en localStorage
-    localStorage.setItem('resultados', JSON.stringify(resultados));
+    if (current + 1 < fragments.length) {
+      setCurrent(current + 1);
+      setSelectedWords({});
+      setStartTime(Date.now());
+      setFirstClickTime(null);
+    } else {
+      // Guardar en localStorage antes de redirigir
+      localStorage.setItem('logData', JSON.stringify(logData));
+      navigate('/resultados');
+    }
   };
+
+  const handleReset = () => {
+    setCurrent(0);
+    setSelectedWords({});
+    setStartTime(Date.now());
+    setFirstClickTime(null);
+    setLogData([]);
+  };
+
+  useEffect(() => {
+    if (current >= fragments.length) {
+      navigate('/resultados');
+    }
+  }, [current, navigate]);
+
+  const fragment = fragments[current];
 
   return (
-    <div>
-      <h2>Resultados Finales</h2>
-      
-      <div>
-        <h3>Resumen de la Actividad:</h3>
-        <p>Respuestas Correctas: {resultados.respuestasCorrectas}</p>
-        <p>Respuestas Incorrectas: {resultados.respuestasIncorrectas}</p>
-        <p>Porcentaje de Aciertos: {resultados.porcentajeAciertos}%</p>
-        <p>Inicio de la Actividad: {resultados.inicioActividad}</p>
-        <p>Primer Clic (Latencia): {resultados.primerClic} segundos</p>
-        <p>Tiempo Total: {resultados.tiempoTotal} segundos</p>
-        <p>Conteo de Clics Totales: {resultados.conteoClicsTotales}</p>
-        <p>Palabras Omitidas: {JSON.stringify(resultados.palabrasOmitidas)}</p>
-        <p>Errores Comunes: {JSON.stringify(erroresComunes)}</p>
-        <p>Tiempo Promedio por Palabra: {resultados.tiempoPromedioPorPalabra} segundos</p>
-        <p>Secuencia de Selección: {JSON.stringify(resultados.secuenciaSeleccion)}</p>
-      </div>
-      
-      <button onClick={finalizarActividad}>Finalizar y Guardar Resultados</button>
+    <div className="p-6 space-y-6 max-w-3xl mx-auto">
+      {current < fragments.length ? (
+        <>
+          <p className="text-sm text-gray-600">
+            Lee el fragmento y selecciona las palabras clave. Las palabras correctas se mostrarán en azul, las incorrectas en amarillo.
+          </p>
+
+          <div className="bg-white p-4 rounded-xl shadow-lg">
+            <p className="text-gray-700 leading-relaxed">
+              {[fragment.title, fragment.text].join(' ').split(' ').map((word, j) => {
+                const key = `${current}-${j}`;
+                const selected = selectedWords[key];
+                const correct = isCorrect(word, fragment.keywords);
+                let bgColor = '';
+
+                if (selected) {
+                  bgColor = correct ? 'bg-blue-300' : 'bg-yellow-300';
+                }
+
+                return (
+                  <span
+                    key={key}
+                    className={`cursor-pointer px-1 rounded-sm ${bgColor} transition-colors duration-200`}
+                    onClick={() => handleWordClick(current, j)}
+                  >
+                    {word + ' '}
+                  </span>
+                );
+              })}
+            </p>
+          </div>
+
+          <div className="text-right">
+            <button
+              onClick={handleNext}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg"
+            >
+              {current + 1 < fragments.length ? 'Siguiente' : 'Finalizar'}
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <h2 className="text-xl font-semibold text-center mb-4">Visualización de Resultados</h2>
+
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={logData}>
+              <XAxis dataKey="fragmentTitle" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="percentageCorrect" fill="#8884d8" />
+            </BarChart>
+          </ResponsiveContainer>
+
+          <div className="mt-6 text-center">
+            <button
+              onClick={handleReset}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
+            >
+              Reiniciar Ejercicios
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
-};
-
-export default ResultadosFinales;
+}
