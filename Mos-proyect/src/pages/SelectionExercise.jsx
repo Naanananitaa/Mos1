@@ -97,7 +97,7 @@ export default function Ejercicios() {
     <div className="p-6 space-y-6 max-w-3xl mx-auto">
       {current < fragments.length ? (
         <>
-          <p className="text-sm text-gray-600">
+          <p className="p-4 text-gray-600">
             Lee el fragmento y selecciona las palabras clave. Las palabras correctas se mostrarán en azul, las incorrectas en amarillo.
           </p>
 
@@ -129,7 +129,7 @@ export default function Ejercicios() {
           <div className="text-right">
             <button
               onClick={handleNext}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg"
+              className="bg-teal-400 hover:bg-teal-600 text-white px-4 py-2 rounded-lg"
             >
               {current + 1 < fragments.length ? 'Siguiente' : 'Finalizar'}
             </button>
@@ -151,7 +151,7 @@ export default function Ejercicios() {
           <div className="mt-6 text-center">
             <button
               onClick={handleReset}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
+              className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg"
             >
               Reiniciar Ejercicios
             </button>

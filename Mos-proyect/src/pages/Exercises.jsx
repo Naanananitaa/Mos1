@@ -6,37 +6,37 @@ const exerciseSections = [
     title: 'Lectura Interactiva',
     description: 'Identifica títulos, subtítulos y conceptos clave en fragmentos de texto.',
     path: '/ejercicios/seleccion',
-    color: 'from-amber-200 to-red-400',
+    color: 'from-blue-400 to-purple-400',
   },
   {
     title: 'Subrayado',
     description: 'Subraya las ideas principales del texto.',
     path: '/ejercicios/subrayado',
-    color: 'from-green-400 to-blue-400',
+    color: 'from-sky-400 to-indigo-400',
   },
   {
     title: 'Transcripción guiada',
     description: 'Transcribe un texto de acuerdo con la pregunta que se presenta.',
     path: '#',
-    color: 'from-pink-400 to-purple-300',
+    color: 'from-cyan-500 to-teal-300',
   },
   {
     title: 'Parafraseo',
     description: 'Parafrasea un texto de acuerdo con la pregunta que se presenta.',
     path: '#',
-    color: 'from-cyan-400 to-fuchsia-400',
+    color: 'from-cyan-700 to-violet-300',
   },
   {
     title: 'Preguntas de opción múltiple',
     description: '.Selecciona la respuesta correcta de acuerdo con el texto.',
     path: '#',
-    color: 'from-orange-400 to-yellow-300',
+    color: 'from-cyan-200 to-blue-700',
   },
   {
     title: 'Correcciones de frases',
     description: 'lee frases erróneas y selecciona la opción correcta.',
     path: '#',
-    color: 'from-cyan-700 to-violet-200',
+    color: 'from-cyan-400 to-sky-600',
   },
 
 
