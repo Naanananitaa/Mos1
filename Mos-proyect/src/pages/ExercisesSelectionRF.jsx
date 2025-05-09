@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar } from 'recharts';
+import { useNavigate } from 'react-router-dom';
 
 export default function ResultadosFinales() {
   const [resultados, setResultados] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const data = localStorage.getItem('logData');
@@ -21,8 +23,8 @@ export default function ResultadosFinales() {
     return {
       promedioAciertos: (totalAciertos / totalEjercicios).toFixed(2),
       promedioSeleccionadas: (totalSeleccionadas / totalEjercicios).toFixed(2),
-      promedioTiempo: (totalTiempo / totalEjercicios / 1000).toFixed(2), // en segundos
-      promedioLatencia: (totalLatencia / totalEjercicios / 1000).toFixed(2), // en segundos
+      promedioTiempo: (totalTiempo / totalEjercicios / 1000).toFixed(2),
+      promedioLatencia: (totalLatencia / totalEjercicios / 1000).toFixed(2),
     };
   };
 
@@ -51,6 +53,22 @@ export default function ResultadosFinales() {
               <Bar dataKey="percentageCorrect" fill="#4ade80" />
             </BarChart>
           </ResponsiveContainer>
+
+          {/* Botones debajo del gráfico */}
+          <div className="mt-4 flex justify-center gap-4">
+            <button
+              className="bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-700"
+              onClick={() => navigate('/ejercicios/subrayado')}
+            >
+              Ir al siguiente ejercicio (Subrayado)
+            </button>
+            <button
+              className="bg-sky-500 text-white px-4 py-2 rounded hover:bg-sky-700"
+              onClick={() => navigate('/exercises')}
+            >
+              Volver al menú
+            </button>
+          </div>
         </div>
       </div>
 

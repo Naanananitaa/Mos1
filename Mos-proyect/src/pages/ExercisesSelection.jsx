@@ -11,7 +11,7 @@ const fragments = [
   {
     title: 'Metodología Cuantitativa',
     text: 'La metodología cuantitativa se basa en la recolección y análisis de datos numéricos. Permite identificar patrones, establecer relaciones entre variables y generalizar resultados. Emplea técnicas estadísticas y experimentales para describir fenómenos y evaluar hipótesis con rigurosidad. Esta metodología busca objetividad y replicabilidad en la investigación.',
-    keywords: ['metodología cuantitativa', 'datos', 'variables', 'estadísticas', 'hipótesis']
+    keywords: ['metodología', 'cuantitativa', 'datos', 'numéricos.','variables', 'estadísticas', 'hipótesis']
   },
   {
     title: 'El estímulo en psicología',

@@ -6,20 +6,18 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Lessons from "./pages/Lessons";
 import ExercisesMenu from './pages/Exercises';
-    import SelectionExercise from './pages/SelectionExercise';
-    import ResultadosSeleccion from './pages/SeleccionRF';
-    import Underline from './pages/SubrayadoExercise';
-    import ResultadosSubrayado from './pages/SubrayadoRF';
-    import Transcripcion from './pages/TranscriptionExercise';
-    import ResultadosTranscripcion from './pages/TranscriptionRF';
-    import Parafraseo from './pages/ParafraseoExercise';
-    import ResultadosParafraseo from './pages/ParafraseoRF';
-    import Correcciones from './pages/CorreccionesExercise'
-    import ResultadosCorrecciones from './pages/CorreccionesRF';
-    import OpcionMultiple from './pages/OpcionMultipleExercise';
+    import SelectionExercise from './pages/ExercisesSelection';
+    import ResultadosSeleccion from './pages/ExercisesSelectionRF';
+    import Underline from './pages/ExercisesSubrayado';
+    import ResultadosSubrayado from './pages/ExercisesSubrayadoRF';
+    import Transcripcion from './pages/ExercisesTranscription';
+    import ResultadosTranscripcion from './pages/ExercisesTranscriptionRF';
+    import Parafraseo from './pages/ExercisesParafrasis';
+    import ResultadosParafraseo from './pages/ExercisesParafrasisRF';
+    import Correcciones from './pages/ExercisesCorrecciones'
+    import ResultadosCorrecciones from './pages/ExercisesCorreccionesRF';
+    import OpcionMultiple from './pages/ExercisesOpcionMultiple';
     import ResultadosOpcionMultiple from './pages/ExercisesOpcionMultipleRF';
-
-    
 import Assessments from "./pages/Assessments";
 import Glossary from "./pages/Glossary";
 import Resources from "./pages/Resources";

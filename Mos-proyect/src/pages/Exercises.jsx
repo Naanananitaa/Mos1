@@ -23,19 +23,19 @@ const exerciseSections = [
   {
     title: 'Parafraseo',
     description: 'Parafrasea un texto de acuerdo con la pregunta que se presenta.',
-    path: '/',
+    path: '/ejercicios/parafraseo',
     color: 'from-violet-300 to-cyan-700',
   },
   {
     title: 'Preguntas de opción múltiple',
     description: '.Selecciona la respuesta correcta de acuerdo con el texto.',
-    path: '#',
+    path: '/ejercicios/opcionmultiple',
     color: 'from-cyan-400 to-sky-600',
   },
   {
     title: 'Correcciones de frases',
     description: 'lee frases erróneas y selecciona la opción correcta.',
-    path: '#',
+    path: '/ejercicios/correcciones',
     color: 'from-indigo-400 to-sky-700',
   },
 
