@@ -3,22 +3,22 @@ import { useNavigate } from 'react-router-dom';
 import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar } from 'recharts';
 
 const fragments = [
-    {
-      title: '¿Qué es la conducta?',
-      text: 'La conducta es el conjunto de interacciones entre un organismo y su contexto. Estas interacciones pueden observarse y medirse en función de los cambios que ocurren en el ambiente y en el organismo como resultado de tales relaciones. No se limita a respuestas visibles, sino que también incluye disposiciones temporoespaciales que configuran patrones estables en situaciones similares.',
-      keywords: ['conducta', 'interacciones', 'organismo', 'contexto', 'respuestas']
-    },
-    {
-      title: 'Metodología Cuantitativa',
-      text: 'La metodología cuantitativa se basa en la recolección y análisis de datos numéricos. Permite identificar patrones, establecer relaciones entre variables y generalizar resultados. Emplea técnicas estadísticas y experimentales para describir fenómenos y evaluar hipótesis con rigurosidad. Esta metodología busca objetividad y replicabilidad en la investigación.',
-      keywords: ['metodología cuantitativa', 'datos', 'variables', 'estadísticas', 'hipótesis']
-    },
-    {
-      title: 'El estímulo en psicología',
-      text: 'El estímulo es cualquier cambio en el entorno que puede influir en la conducta de un organismo. En el análisis interconductual, un estímulo no tiene significado por sí solo, sino por las funciones que adquiere dentro de una situación dada. Así, un estímulo puede adquirir diferentes funciones dependiendo del campo interconductual en el que se encuentre el organismo.',
-      keywords: ['estímulo', 'entorno', 'funciones', 'campo interconductual', 'organismo']
-    }
-  ];
+  {
+    title: '¿Qué es la conducta?',
+    text: 'La conducta es el conjunto de interacciones entre un organismo y su contexto. Estas interacciones pueden observarse y medirse en función de los cambios que ocurren en el ambiente y en el organismo como resultado de tales relaciones. No se limita a respuestas visibles, sino que también incluye disposiciones temporoespaciales que configuran patrones estables en situaciones similares.',
+    keywords: ['conducta', 'interacciones', 'organismo', 'contexto', 'respuestas']
+  },
+  {
+    title: 'Metodología Cuantitativa',
+    text: 'La metodología cuantitativa se basa en la recolección y análisis de datos numéricos. Permite identificar patrones, establecer relaciones entre variables y generalizar resultados. Emplea técnicas estadísticas y experimentales para describir fenómenos y evaluar hipótesis con rigurosidad. Esta metodología busca objetividad y replicabilidad en la investigación.',
+    keywords: ['metodología cuantitativa', 'datos', 'variables', 'estadísticas', 'hipótesis']
+  },
+  {
+    title: 'El estímulo en psicología',
+    text: 'El estímulo es cualquier cambio en el entorno que puede influir en la conducta de un organismo. En el análisis interconductual, un estímulo no tiene significado por sí solo, sino por las funciones que adquiere dentro de una situación dada. Así, un estímulo puede adquirir diferentes funciones dependiendo del campo interconductual en el que se encuentre el organismo.',
+    keywords: ['estímulo', 'entorno', 'funciones', 'campo interconductual', 'organismo']
+  }
+];
 
 export default function Ejercicios() {
   const [current, setCurrent] = useState(0);
@@ -53,17 +53,17 @@ export default function Ejercicios() {
     const totalTime = Date.now() - startTime;
     const latency = firstClickTime ? firstClickTime - startTime : null;
 
-    setLogData(prev => [
-      ...prev,
-      {
-        fragmentTitle: fragment.title,
-        correctCount,
-        totalSelected,
-        percentageCorrect: totalSelected ? (correctCount / totalSelected) * 100 : 0,
-        totalTime,
-        latency
-      }
-    ]);
+    const newLog = {
+      fragmentTitle: fragment.title,
+      correctCount,
+      totalSelected,
+      percentageCorrect: totalSelected ? (correctCount / totalSelected) * 100 : 0,
+      totalTime,
+      latency
+    };
+
+    const updatedLogData = [...logData, newLog];
+    setLogData(updatedLogData);
 
     if (current + 1 < fragments.length) {
       setCurrent(current + 1);
@@ -71,9 +71,9 @@ export default function Ejercicios() {
       setStartTime(Date.now());
       setFirstClickTime(null);
     } else {
-      // Guardar en localStorage antes de redirigir
-      localStorage.setItem('logData', JSON.stringify(logData));
-      navigate('/resultados');
+      // Guardar la versión actualizada en localStorage
+      localStorage.setItem('logData', JSON.stringify(updatedLogData));
+      navigate('/resultados-seleccion');
     }
   };
 
@@ -84,12 +84,6 @@ export default function Ejercicios() {
     setFirstClickTime(null);
     setLogData([]);
   };
-
-  useEffect(() => {
-    if (current >= fragments.length) {
-      navigate('/resultados');
-    }
-  }, [current, navigate]);
 
   const fragment = fragments[current];
 
