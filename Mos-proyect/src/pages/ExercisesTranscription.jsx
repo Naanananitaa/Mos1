@@ -1,3 +1,7 @@
+// Falta verificar si la trascripcion del texto original es correcta 
+// Falta que indique o guie la trascripcion del texto original y las respuestas (marcando en amarillo las palabras, untos, comas, letras, etc que no son correctas y las que si).
+
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

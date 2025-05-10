@@ -1,3 +1,6 @@
+//Falta el video tutorial
+//Falta correir las instrucciones
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +25,7 @@ export default function EjercicioSubrayado() {
           </video>
           <button
             onClick={() => avanzarAFase('instrucciones')}
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+            className="mt-4 px-4 py-2 bg-teal-500 hover:bg-sky-700 text-white rounded"
           >
             Siguiente
           </button>
@@ -35,9 +38,9 @@ export default function EjercicioSubrayado() {
           <p>En este ejercicio debes subrayar las palabras clave del fragmento presentado...</p>
           <button
             onClick={irAEjercicios}
-            className="mt-4 px-4 py-2 bg-green-600 text-white rounded"
+            className="mt-4 px-4 py-2 bg-teal-500 hover:bg-sky-700 text-white rounded"
           >
-            Comenzar ejercicio
+            Comenzar
           </button>
         </div>
       )}

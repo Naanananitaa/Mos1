@@ -1,3 +1,6 @@
+// Falta definir los posibles resultados correctos de los ejercicios de parafrasis (Dado que es parafrasis, no hay una respuesta correcta única, pero se pueden definir criterios de evaluación para la retroalimentación).
+// También falta la parte de guardar los resultados en el localStorage y mostrarlos en la página de resultados.
+
 import { useState } from 'react';
 
 export default function Ejercicios() {

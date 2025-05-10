@@ -1,4 +1,5 @@
-// Ejercicios.jsx
+// Falta confiurar la respuesta de los ejercicios de correcciones, y la retroalimentacion
+// Tambien falta configurar el archivo de estilos para que se vea bien la pagina
 import { useState } from "react";
 
 const textoOriginal = `

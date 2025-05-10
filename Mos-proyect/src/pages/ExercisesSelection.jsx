@@ -1,3 +1,6 @@
+// Falta verificar si el usuario seleccionó la palabra correcta o no, y si no lo hizo, mostrarla en amarillo, y mostrarle cuales son y porque.
+// También falta la parte de guardar los resultados en el localStorage y mostrarlos en la página de resultados.
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar } from 'recharts';
@@ -123,7 +126,7 @@ export default function Ejercicios() {
           <div className="text-right">
             <button
               onClick={handleNext}
-              className="bg-teal-400 hover:bg-teal-600 text-white px-4 py-2 rounded-lg"
+              className="bg-teal-400 hover:bg-teal-700 text-white px-4 py-2 rounded-lg"
             >
               {current + 1 < fragments.length ? 'Siguiente' : 'Finalizar'}
             </button>
@@ -145,7 +148,7 @@ export default function Ejercicios() {
           <div className="mt-6 text-center">
             <button
               onClick={handleReset}
-              className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg"
+              className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg"
             >
               Reiniciar Ejercicios
             </button>
@@ -155,3 +158,4 @@ export default function Ejercicios() {
     </div>
   );
 }
+

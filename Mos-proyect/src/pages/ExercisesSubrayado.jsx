@@ -1,3 +1,6 @@
+// Falta indicar si el usuario selecciono la idea principal o no, y si no lo hizo, mostrarle cual es y porque y de ser correcta indicarlo.
+// Falta guardar los resultados en el localStorage y mostrarlos en la página de resultados.
+
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar } from 'recharts';

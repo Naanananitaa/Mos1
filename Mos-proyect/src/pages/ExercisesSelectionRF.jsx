@@ -1,3 +1,5 @@
+// También falta la parte de guardar los resultados en el localStorage y mostrarlos en la página de resultados.
+
 import React, { useEffect, useState } from 'react';
 import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar } from 'recharts';
 import { useNavigate } from 'react-router-dom';

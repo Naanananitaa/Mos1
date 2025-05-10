@@ -1,3 +1,7 @@
+// Falta poder corregir los errores de la respuesta, es decir, si el usuario selecciona una respuesta incorrecta, se le debe mostrar un mensaje de error y permitirle corregirlo. 
+// Falta poner el texto original en cada ejercicio, y luego 3 preguntas de opción múltiple, y al final un botón para verificar las respuestas y mostrar retroalimentacion.
+// También falta la parte de guardar los resultados en el localStorage y mostrarlos en la página de resultados.
+
 import { useState } from "react";
 
 const preguntas = [
