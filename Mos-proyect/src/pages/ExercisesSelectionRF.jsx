@@ -58,7 +58,7 @@ export default function ResultadosFinales() {
           <div className="mt-4 flex justify-center gap-4">
             <button
               className="bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-700"
-              onClick={() => navigate('/ejercicios/subrayado')}
+              onClick={() => navigate('/ejercicios/subrayado-tutorial')}
             >
               Ir al siguiente ejercicio (Subrayado)
             </button>
